@@ -24,6 +24,8 @@ gem 'redis', '~> 4.0'
 
 # Yilun to add Pundit gem
 gem 'pundit'
+# Yilun to add auth token gem
+gem 'simple_token_authentication'
 
 
 # Use Active Storage variant
