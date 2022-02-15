@@ -1,0 +1,24 @@
+
+curl -s http://localhost:3000/api/v1/restaurants | jq
+
+curl -s http://localhost:3000/api/v1/restaurants/2 | jq
+
+curl -i -X PATCH                                        \
+       -H 'Content-Type: application/json'              \
+       -H 'X-User-Email: u1@user.com'               \
+       -H 'X-User-Token: Jdm5_MT3UmYpbQ-tM8f2'          \
+       -d '{ "restaurant": { "name": "New name" } }'    \
+       http://localhost:3000/api/v1/restaurants/2
+
+curl -i -X POST                                                              \
+     -H 'Content-Type: application/json'                                     \
+     -H 'X-User-Email: u1@user.com'                                      \
+     -H 'X-User-Token: Jdm5_MT3UmYpbQ-tM8f2'                                 \
+     -d '{ "restaurant": { "name": "Created restaurant", "address": "Paris" } }' \
+     http://localhost:3000/api/v1/restaurants
+
+
+curl -i -X DELETE                               \
+     -H 'X-User-Email: u1@user.com'                                      \
+     -H 'X-User-Token: Jdm5_MT3UmYpbQ-tM8f2'                                 \
+     http://localhost:3000/api/v1/restaurants/2
